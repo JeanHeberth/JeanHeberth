@@ -1,8 +1,11 @@
+<img src="java.gif" width="200px" align="right" >
+
 ### Olá! Eu sou Jean Heberth 👋
 
 - 🔭 Hoje trabalho com Analista de Qualidade
 - 🌱 Atualmente estou aprendendo automação de teste utilizando java e selenium
 - 🤔 Procuro ajuda com projetos de automação para melhora meus conhecimentos
+
 
  ##
 <div>
