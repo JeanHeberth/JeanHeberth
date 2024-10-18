@@ -4,7 +4,7 @@
 
 - 🔭 Hoje trabalho com Analista de Qualidade
 - 🌱 Atualmente estou aprendendo automação de teste utilizando java e selenium
-- 🤔 Procuro ajuda com projetos de automação para melhora meus conhecimentos
+- 🤔 Procuro ajuda com projetos de automação para melhorar meus conhecimentos.
 
 
  ##
