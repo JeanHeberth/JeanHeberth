@@ -17,14 +17,27 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate snake
-        uses: Platane/snk@master
+        uses: Platane/snk@v3
         with:
           github_user_name: JeanHeberth
-          gif_out_path: dist/github-contribution-grid-snake.gif
-          svg_out_path: dist/github-contribution-grid-snake.svg
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            dist/github-contribution-grid-snake.gif
+            dist/github-contribution-grid-snake.svg
 
-      - name: Show status
-        run: git status
+      - name: Validate generated snake
+        run: |
+          test -s dist/github-contribution-grid-snake.gif
+          test -s dist/github-contribution-grid-snake.svg
+          python3 - <<'PYTHON'
+          import xml.etree.ElementTree as ET
+
+          root = ET.parse("dist/github-contribution-grid-snake.svg").getroot()
+          cells = [node for node in root.iter() if "c" in node.get("class", "").split()]
+          if not cells:
+              raise SystemExit("Snake SVG has no contribution cells")
+          print(f"Validated {len(cells)} contribution cells")
+          PYTHON
 
       - name: Deploy to output branch
         uses: crazy-max/ghaction-github-pages@v5
