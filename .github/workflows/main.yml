@@ -22,8 +22,8 @@ jobs:
           github_user_name: JeanHeberth
           github_token: ${{ secrets.GITHUB_TOKEN }}
           outputs: |
-            dist/github-contribution-grid-snake.gif
-            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake.gif?palette=github-dark&color_snake=purple&color_background=#0d1117
+            dist/github-contribution-grid-snake.svg?palette=github-dark&color_snake=purple
 
       - name: Validate generated snake
         run: |
